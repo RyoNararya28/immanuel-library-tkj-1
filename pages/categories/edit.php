@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . '/../../repositories/category-repository.php';
+
+$category = getCategory();
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -23,7 +29,7 @@
     require_once __DIR__ . '/../../components/admin/topbar.php';
     ?>
       <div class="app-content">
-        <form method="" action="">
+        <form method="POST" action="../../actions/categories/update.php">
           <input type="hidden" name="id" value="<?= $category['id'] ?>">
           <div class="form-card">
             <div class="form-section-title">Data Kategori</div>
