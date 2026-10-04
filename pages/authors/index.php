@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . '/../../repositories/author-repository.php';
+
+$authors = getAuthors();
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -52,7 +58,10 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" 
+                         class="btn btn-danger btn-sm" 
+                         onclick="return confirm('Apakah Anda yakin ingin menghapus penulis ini?')">Hapus</a>
+                    </div>
                   </div>
                 </td>
               </tr>
