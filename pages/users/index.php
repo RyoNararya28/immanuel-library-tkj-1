@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . '/../../repositories/user-repository.php';
+
+$users = getUsers();
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -60,7 +66,9 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $user['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="../../actions/users/destroy.php?id=<?= $user['id'] ?>" 
+                         class="btn btn-danger btn-sm" 
+                         onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>
