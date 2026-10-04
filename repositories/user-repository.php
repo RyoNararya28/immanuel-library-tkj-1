@@ -19,3 +19,13 @@ function getUser()
         "role" => "admin"
     ];
 }
+
+function getProfile()
+{
+    return [
+        "id" => 1,
+        "name" => "Admin Utama",
+        "email" => "admin@ski.sch.id",
+        "role" => "admin"
+    ];
+}
