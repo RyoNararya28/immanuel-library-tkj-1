@@ -1,6 +1,13 @@
+<?php
+require_once __DIR__ . '/../../repositories/book-repository.php';
+
+$books = getbooks()
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +16,7 @@
 </head>
 
 <body>
-  <?php
-  $book = [
-    "id" => 1,
-    "title" => "Laskar Pelangi",
-    "category" => "Fiksi",
-    "year" => 2005,
-    "stock" => 12,
-    "authors" => "Andrea Hirata",
-  ];
-  ?>
+
   <div class="app-shell">
     <aside class="app-sidebar">
       <div class="brand">
@@ -110,7 +108,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <?php foreach($books as $index => $book):?>
+                <tr>
                 <td>
                   <div class="cell-primary">
                     <span class="cell-thumb"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -124,7 +123,10 @@
                 <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
                 <td>
                   <div class="chip-list">
-                    <span class="chip"><?= $book['authors'] ?></span>
+                    <?php foreach($book['authors'] as $author):?>
+                      <span class="chip"><?= $author ?></span>
+                    <?php endforeach?>
+                    
                   </div>
                 </td>
                 <td><?= $book['stock'] ?></td>
@@ -135,6 +137,13 @@
                   </div>
                 </td>
               </tr>
+              <?php endforeach?>
+
+              <?php if(empty($books)):?>
+                <tr>
+                  <td style="text-align: center;" colspan="5">Tidak ada data buku yang ditemukan</td>
+                </tr>
+              <?php endif?>  
             </tbody>
           </table>
         </div>
