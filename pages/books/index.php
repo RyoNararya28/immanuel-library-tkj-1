@@ -1,9 +1,8 @@
 <?php
 require_once __DIR__ . '/../../repositories/book-repository.php';
 
-$books = getbooks()
+$books = getBooks()
 ?>
-
 
 <!DOCTYPE html>
 <html lang="id">
