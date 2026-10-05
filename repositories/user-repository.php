@@ -20,12 +20,10 @@ function getUser()
     ];
 }
 
-function getProfile()
-{
+function getProfile() {
     return [
-        "id" => 1,
-        "name" => "Admin Utama",
-        "email" => "admin@ski.sch.id",
-        "role" => "admin"
+        'phone'   => '081234567890',
+        'address' => 'Jl. Merdeka No. 123, Pontianak',
+        'bio'     => 'Pengelola perpustakaan digital.'
     ];
 }
