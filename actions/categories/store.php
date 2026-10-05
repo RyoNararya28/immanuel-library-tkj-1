@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['store'])) {
     echo "<h1>Bukti Data Berhasil Diterima (Tambah Kategori)</h1>";
     echo "<pre>";
     print_r($_POST);
