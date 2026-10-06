@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     echo "<h1>Bukti Data Berhasil Diterima (Update Pengguna)</h1>";
     echo "<pre>";
     print_r($_POST);
