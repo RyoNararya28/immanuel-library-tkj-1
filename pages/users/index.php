@@ -34,40 +34,41 @@ $users = getUsers();
         </div>
 
         <div class="data-card">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-        <div class="cell-primary">
-     <tbody>
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
         <?php if (!empty($users)): ?>
-          <?php foreach ($users as $user): ?>
-            <tr>
-               <td><?= htmlspecialchars($user['id']) ?></td>
-                <td><?= htmlspecialchars($user['name']) ?></td>
-                <td><?= htmlspecialchars($user['email']) ?></td>
-                <td><span class="badge badge-<?= $user['role'] === 'admin' ? 'danger' : 'info' ?>"><?= htmlspecialchars($user['role']) ?></span></td>
-                <td>
-                  <a href="edit.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                  <a href="../../actions/users/destroy.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?')">Hapus</a>
-                </td>
-             </tr>
-          <?php endforeach; ?>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?= htmlspecialchars($user['id']) ?></td>
+                    <td><?= htmlspecialchars($user['name']) ?></td>
+                    <td><?= htmlspecialchars($user['email']) ?></td>
+                    <td>
+                        <span class="badge badge-<?= $user['role'] === 'admin' ? 'danger' : 'info' ?>">
+                            <?= htmlspecialchars($user['role']) ?>
+                        </span>
+                    </td>
+                    <td>
+                        <a href="edit.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="../../actions/users/destroy.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?')">Hapus</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         <?php else: ?>
-          <tr>
-              <td colspan="5" class="text-center">Belum ada data pengguna.</td>
-          </tr>
-      <?php endif; ?>
+            <tr>
+                <td colspan="5" class="text-center">Belum ada data pengguna.</td>
+            </tr>
+        <?php endif; ?>
     </tbody>
-
+</table>
         <div class="pagination">
           <span class="pagination-btn is-disabled">&lt;</span>
           <span class="pagination-btn is-disabled">&gt;</span>

@@ -11,11 +11,11 @@ function getAuthors()
     ];
 }
 
-function getAuthor()
-{
+function getAuthor() {
     return [
-        "id" => 1,
-        "name" => "Andrea Hirata",
-        "total_books" => 1
+        'id' => 1,
+        'name' => 'Andrea Hirata',
+        'bio' => 'Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.',
+        'total_books' => 5
     ];
 }
