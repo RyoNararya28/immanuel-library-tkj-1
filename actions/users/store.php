@@ -1,10 +1,11 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['store'])) {
-    echo "<h1>Bukti Data Berhasil Diterima (Tambah Pengguna)</h1>";
-    echo "<pre>";
+if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $role = $_POST['role'];
+
     print_r($_POST);
-    echo "</pre>";
-    echo '<br><a href="../../pages/users/index.php">Kembali ke Daftar Pengguna</a>';
-} else {
-    echo "Akses tidak valid.";
 }
+
+?>

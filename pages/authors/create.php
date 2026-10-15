@@ -1,3 +1,8 @@
+<?php
+$pageTitle = "Tambah Penulis";
+$pageSubtitle = "Daftarkan penulis baru ke sistem";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -8,14 +13,10 @@
 </head>
 <body>
   <div class="app-shell">
-  <?php require_once __DIR__ . '/../../components/admin/sidebar.php'; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
+
     <main class="app-main">
-    <?php
-    $pageTitle = "Tambah Penulis";
-    $pageSubtitle = "Tambah data penulis baru";
-    require_once __DIR__ . '/../../components/admin/topbar.php';
-    ?>
-    
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/authors/store.php">

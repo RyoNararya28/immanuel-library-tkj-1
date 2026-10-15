@@ -1,7 +1,10 @@
 <?php
-require_once __DIR__ . '/../../repositories/author-repository.php';
+require_once __DIR__ . "/../../repositories/author-repository.php";
 
 $author = getAuthor();
+
+$pageTitle = "Edit Penulis";
+$pageSubtitle = "Perbarui data penulis";
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +19,10 @@ $author = getAuthor();
 
 <body>
   <div class="app-shell">
-    <?php require_once __DIR__ . '/../../components/admin/sidebar.php'; ?>
+    <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
+
     <main class="app-main">
-    <?php
-    $pageTitle = "Edit Penulis";
-    $pageSubtitle = "Ubah informasi data penulis";
-    require_once __DIR__ . '/../../components/admin/topbar.php';
-    ?>
+      <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/authors/update.php">
@@ -35,7 +35,7 @@ $author = getAuthor();
             </div>
             <div class="form-group">
               <label for="bio">Biografi Singkat</label>
-              <textarea id="bio" name="bio" rows="3"><?= htmlspecialchars($author['bio'] ?? '') ?></textarea>
+              <textarea id="bio" name="bio" rows="3"><?= $author['bio'] ?></textarea>
             </div>
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>

@@ -1,8 +1,11 @@
 <?php
-require_once __DIR__ . '/../../repositories/user-repository.php';
+require_once __DIR__ . "/../../repositories/user-repository.php";
 
 $user = getUser();
 $profile = getProfile();
+
+$pageTitle = "Profil Saya";
+$pageSubtitle = "Kelola data akun dan profil Anda";
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +18,10 @@ $profile = getProfile();
 </head>
 <body>
   <div class="app-shell">
-    <?php require_once __DIR__ . '/../../components/admin/sidebar.php'; ?>
+  <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
+
     <main class="app-main">
-    <?php
-    $pageTitle = "Profil Saya";
-    $pageSubtitle = "Kelola informasi profil akun Anda";
-    require_once __DIR__ . '/../../components/admin/topbar.php';
-    ?>
+    <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
       <div class="app-content">
         <form method="POST" action="../../actions/profile/update.php">

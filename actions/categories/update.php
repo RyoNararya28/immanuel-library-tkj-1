@@ -1,10 +1,10 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
-    echo "<h1>Bukti Data Berhasil Diterima (Update Kategori)</h1>";
-    echo "<pre>";
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
     print_r($_POST);
-    echo "</pre>";
-    echo '<br><a href="../../pages/categories/index.php">Kembali ke Daftar Kategori</a>';
-} else {
-    echo "Akses tidak valid.";
 }
+
+?>

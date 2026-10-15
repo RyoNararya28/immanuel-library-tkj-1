@@ -1,10 +1,12 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
-    echo "<h1>Bukti Data Berhasil Diterima (Update Profil)</h1>";
-    echo "<pre>";
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $bio = $_POST['bio'];
+
     print_r($_POST);
-    echo "</pre>";
-    echo '<br><a href="../../pages/profile/edit.php">Kembali ke Edit Profil</a>';
-} else {
-    echo "Akses tidak valid.";
 }
+
+?>
