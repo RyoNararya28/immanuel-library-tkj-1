@@ -2,14 +2,10 @@
 
 function getUsers()
 {
-  $users = [
-    ["id" => 1, "name" => "Admin Utama",    "email" => "admin@ski.sch.id",               "role" => "admin"],
-    ["id" => 2, "name" => "Budi Santoso",   "email" => "budi.santoso@siswa.ski.sch.id",  "role" => "member"],
-    ["id" => 3, "name" => "Siti Aminah",    "email" => "siti.aminah@siswa.ski.sch.id",   "role" => "member"],
-    ["id" => 4, "name" => "Richard Marcell","email" => "richard.m@ski.sch.id",           "role" => "admin"],
-  ];
+  require_once __DIR__ . "/../config/database.php";
 
-  return $users;
+  $stmt = $pdo->query("SELECT id, name, email, role FROM users ORDER BY id");
+  return $stmt->fetchAll();
 }
 
 function getUser()
