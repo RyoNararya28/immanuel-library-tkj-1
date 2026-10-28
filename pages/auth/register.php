@@ -29,19 +29,19 @@ unset($_SESSION['errors'], $_SESSION['old']);
       <form method="POST" action="../../actions/auth/register.php">
         <div class="form-group">
           <label for="name">Nama Lengkap</label>
-          <input value="<?= $old['name'] ?? '' ?>" type="text" id="name" name="name" placeholder="Contoh: Budi Santoso">
+          <input value="<?= htmlspecialchars($old['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>" type="text" id="name" name="name" placeholder="Contoh: Budi Santoso">
           <?php if (isset($errors['name'])): ?>
                 <p style="font-size:12px; margin-top:4px; color: red;">
-                  <?= $errors['name'] ?>
+                  <?= htmlspecialchars($errors['name'], ENT_QUOTES, 'UTF-8') ?>
                 </p>
               <?php endif; ?>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input value="<?= $old['email'] ?? '' ?>" type="email" id="email" name="email" placeholder="nama@sekolah.sch.id">
+          <input value="<?= htmlspecialchars($old['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>" type="email" id="email" name="email" placeholder="nama@sekolah.sch.id">
           <?php if (isset($errors['email'])): ?>
                 <p style="font-size:12px; margin-top:4px; color: red;">
-                  <?= $errors['email'] ?>
+                  <?= htmlspecialchars($errors['email'], ENT_QUOTES, 'UTF-8') ?>
                 </p>
               <?php endif; ?>
         </div>
@@ -51,7 +51,7 @@ unset($_SESSION['errors'], $_SESSION['old']);
             <input type="password" id="password" name="password" placeholder="Minimal 8 karakter">
             <?php if (isset($errors['password'])): ?>
                 <p style="font-size:12px; margin-top:4px; color: red;">
-                  <?= $errors['password'] ?>
+                  <?= htmlspecialchars($errors['password'], ENT_QUOTES, 'UTF-8') ?>
                 </p>
               <?php endif; ?>
           </div>
@@ -60,7 +60,7 @@ unset($_SESSION['errors'], $_SESSION['old']);
             <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Ulangi kata sandi">
             <?php if (isset($errors['password_confirmation'])): ?>
                 <p style="font-size:12px; margin-top:4px; color: red;">
-                  <?= $errors['password_confirmation'] ?>
+                  <?= htmlspecialchars($errors['password_confirmation'], ENT_QUOTES, 'UTF-8') ?>
                 </p>
               <?php endif; ?>
           </div>
